@@ -36,17 +36,17 @@ ggplot(mtcars_mpg2) +
 
 
 # note that this boxplot cannot be made with esquisse() unless
-# use geom_boxplot to display the distribution of the continuous variable, -
-# - which visualizeses the median, two hinges, and two whiskers, and an outlier
 # the data is adjusted. What adjustment is needed?
-# the adjustment is changing one of data inputs in the ggplot and making it as a factor
 
 ggplot(mtcars_mpg2, aes(x=as.factor(cyl), y=mpg)) + 
   geom_boxplot(fill="slateblue", alpha=0.2) + 
   xlab("cyl")
 
+# use geom_boxplot to display the distribution of the continuous variable, -
+# - which visualizeses the median, two hinges, and two whiskers, and an outlier
+# the adjustment is changing the variable "cyl" to a classification variable,
+# so we can make the boxplot with esquisse()
 
-
-
+# esquisser(data = mtcars_mpg2, viewer = "browser")
 
 
